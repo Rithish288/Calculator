@@ -1,6 +1,45 @@
 body{
     padding: 0;
     margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image:linear-gradient(to bottom right, rgb(0, 132, 255),rgb(44, 235, 5));
 
-    background-image:linear-gradient(red,yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+button{
+    padding: 0.5em;
+}
+
+#container{
+    box-shadow: 0 2px 1em ;
+}
+
+#calculator_display{
+    background-color: #1f2933;
+    color: #f5f7fa;
+    width: 25vw;
+    padding: 0.75em 1em;
+    text-align: right;
+    font-size: large;
+}
+
+#calculator_keys{
+    background-color: grey;
+    display: grid;
+    grid-template-columns: repeat(4,7vw);
+    grid-template-rows: repeat(5,10vh);
+}
+
+#clear,#equal{grid-column: span 2;grid-row: span 1;}
+#seven,#four,#one{grid-column: 1;}
+#seven,#eight,#nine{grid-row: 2;}
+#minus,#times,#divide{grid-column: 4;}
+#four,#five,#six{grid-row: 3;}
+#zero{grid-row: span 2;}
+
+button{border: 2px solid white;outline: none;}
+button:hover{background-color: rgba(255,255,255,0.4);cursor: pointer;}
