@@ -16,19 +16,20 @@ button{
 
 #container{
     box-shadow: 0 2px 1em ;
+    background-color: transparent;
 }
 
 #calculator_display{
     background-color: #1f2933;
-    color: #f5f7fa;
     width: 25vw;
+    height: 10vh;
+    border-bottom: 5px solid transparent;
     padding: 0.75em 1em;
     text-align: right;
     font-size: large;
 }
 
 #calculator_keys{
-    background-color: grey;
     display: grid;
     grid-template-columns: repeat(4,7vw);
     grid-template-rows: repeat(5,10vh);
@@ -36,10 +37,12 @@ button{
 
 #clear,#equal{grid-column: span 2;grid-row: span 1;}
 #seven,#four,#one{grid-column: 1;}
-#seven,#eight,#nine{grid-row: 2;}
+#seven,#eight,#nine{grid-row: 2;}   
 #minus,#times,#divide{grid-column: 4;}
 #four,#five,#six{grid-row: 3;}
 #zero{grid-row: span 2;}
 
-button{border: 2px solid white;outline: none;}
-button:hover{background-color: rgba(255,255,255,0.4);cursor: pointer;}
+button{border: 2px solid white;outline: none;background-color: rgb(199, 199, 199);}
+button:hover{background-color: rgba(255,255,255,0.7);cursor: pointer;}
+
+.style{color:red}
