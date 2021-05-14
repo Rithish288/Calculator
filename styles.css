@@ -4,6 +4,7 @@ body{
     width: 100vw;
     height: 100vh;
     background-image:linear-gradient(to bottom right, rgb(0, 132, 255),rgb(44, 235, 5));
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     display: flex;
     align-items: center;
@@ -12,37 +13,52 @@ body{
 
 button{
     padding: 0.5em;
+    font-size: 150%;
 }
 
 #container{
-    box-shadow: 0 2px 1em ;
-    background-color: transparent;
+    box-shadow: 0 0 1em ;
+    background-color: black;
 }
 
 #calculator_display{
     background-color: #1f2933;
+    color: white;
     width: 25vw;
-    height: 10vh;
-    border-bottom: 5px solid transparent;
+    min-height: 5vh;
+    height: auto;
+    border: 5px solid transparent;
     padding: 0.75em 1em;
     text-align: right;
-    font-size: large;
+    font-size: 130%;
 }
 
 #calculator_keys{
     display: grid;
-    grid-template-columns: repeat(4,7vw);
+    grid-template-columns: repeat(4,auto);
     grid-template-rows: repeat(5,10vh);
 }
 
-#clear,#equal{grid-column: span 2;grid-row: span 1;}
+.key{
+    background-color: rgb(72, 230, 195);
+}
+
+[data-type = "operation"] {
+    background-color: rgb(176, 255, 86);
+}
+
+#clear{grid-column: span 2; background-color: rgb(255, 157, 122);}
+#cancel{background-color: rgb(255, 193, 77);}
 #seven,#four,#one{grid-column: 1;}
 #seven,#eight,#nine{grid-row: 2;}   
 #minus,#times,#divide{grid-column: 4;}
 #four,#five,#six{grid-row: 3;}
-#zero{grid-row: span 2;}
+#zero{grid-column:2 }
+#decimal{grid-row: 5;}
+#equal{ grid-column: 4; grid-row:4 / span 2;background-color: rgb(243, 255, 82);}
 
-button{border: 2px solid white;outline: none;background-color: rgb(199, 199, 199);}
-button:hover{background-color: rgba(255,255,255,0.7);cursor: pointer;}
+button{border: 2px solid white;outline: none;background-color: rgb(199, 199, 199);cursor: pointer;}
+button:hover{opacity: 0.7;}
 
 .style{color:red}
+.stile{background-color: aqua; font-size: 10px; color: pink;}

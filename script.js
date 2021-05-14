@@ -1,29 +1,41 @@
-var  display, operation, number, equal, cancel, key, i;
-key = document.querySelectorAll(".key");
-operation = document.querySelectorAll(".operation");
-number = document.querySelectorAll(".number");
-cancel = document.querySelectorAll(".cancel");
-equal = document.querySelectorAll(".equal");
-display = document.querySelectorAll("#calculator_display")
+const key = document.getElementsByClassName('key');
+const operation = document.getElementsByClassName('.operation');
+const number = document.getElementsByClassName('number');
+const cancel = document.getElementsByClassName('cancel');
+const equal = document.getElementsByClassName('equal');
+const display = document.getElementById('calculator_display')
+const calcKeys = document.getElementById('calculator_keys')
+const calculator = document.getElementById('calculator')
 
-function myFunction() {
-    for (i = 0; i < key.length; i++) {
-      key[i].style.fontSize = "150%";
+
+
+calcKeys.addEventListener('click', event => {
+  if (!event.target.closest('button')) return
+  const key = event.target;
+  const keyValue = key.textContent;
+  const displayValue = display.textContent;
+  const type = key.dataset.type;
+  const previousKeyType = calculator.dataset
+
+  if ( type === 'number') {
+
+    if (displayValue === '0') {
+      display.textContent = keyValue;
+    }
+
+    else if(previousKeyType === 'operation'){
+      display.textContent = keyValue;
+    }
+
+    else {
+      display.textContent = displayValue + keyValue;
     }
   }
-  myFunction()
 
-  function clickEvent() {
-    for (i = 0; i < number.length; i++) {
-      number[i].classList.toggle("style");
-    }
+  if( type === 'operation') {
+    console.log(key)
+
+    calculator.dataset.previousKeyType = 'operation';
   }
 
-  function myFunct() {
-    for (i = 0; i < display.length; i++) {
-      display[i].style.color = "white";
-    }
-  }
-  myFunct()
-
-console.log('Hello world!')
+})
