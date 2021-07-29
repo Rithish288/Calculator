@@ -2,10 +2,10 @@ const key = document.getElementsByClassName('key');
 const operation = document.getElementsByClassName('.operation');
 const number = document.getElementsByClassName('number');
 const cancel = document.getElementsByClassName('cancel');
-const equal = document.getElementsByClassName('equal');
-const display = document.getElementById('calculator_display')
-const calcKeys = document.getElementById('calculator_keys')
-const calculator = document.getElementById('calculator')
+const equal = document.querySelector('.equal');
+const display = document.querySelector('.calculator_display')
+const calcKeys = document.querySelector('.calculator_keys')
+const calculator = document.querySelector('.calculator')
 
 
 
@@ -16,7 +16,8 @@ calcKeys.addEventListener('click', event => {
   const displayValue = display.textContent;
   const type = key.dataset.type;
   const previousKeyType = calculator.dataset
-
+  console.log(type)
+  
   if ( type === 'number') {
 
     if (displayValue === '0') {

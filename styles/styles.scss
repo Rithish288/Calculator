@@ -1,0 +1,74 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image:linear-gradient(to bottom right, rgb(0, 132, 255),rgb(5, 235, 62));
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    padding: 0.5em;
+    font-size: 150%;
+    border: 2px solid white;
+    outline: none;
+    background-color: rgb(199, 199, 199);
+    cursor: pointer;
+
+    &:hover{opacity: 0.8;}
+}
+
+.container{
+    box-shadow: 0 0 1em ;
+    background-color: black;
+}
+
+.calculator_display{
+    background-color: #1f2933;
+    color: white;
+    width: 25vw;
+    min-height: 50px;
+    height: auto;
+    border: 5px solid transparent;
+    text-align: right;
+    font-size: 130%;
+
+    .previous {
+        height: 40%;
+        color: rgba(255, 255, 255, 0.534);
+        font-size: 70%;
+        margin-bottom: 1em;
+    }
+    .current {
+        height: 55%;
+        margin-top: 1em;
+    }
+}
+
+.calculator_keys{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-template-rows: repeat(5,12vh);
+
+    .key{
+        background-color: rgb(72, 230, 195);
+    }
+
+    .cancelAll{grid-column: span 2; background-color: rgb(255, 157, 122);}
+    .cancel{background-color: rgb(255, 193, 77);}
+    .seven,.four,.one{grid-column: 1;}
+    .seven,.eight,.nine{grid-row: 2;}   
+    .minus,.times,.divide{grid-column: 4;}
+    .four, .five, .six{grid-row: 3;}
+    .zero{grid-column:2 }
+    .decimal{grid-row: 5;}
+    .equal{ grid-column: 4; grid-row:4 / span 2;background-color: rgb(243, 255, 82);}
+
+    [data-type = "operation"] {
+        background-color: rgb(198, 255, 132);
+    }
+}
